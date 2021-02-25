@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+
+        function doRequest(option) {
+
+            var host    = "http://localhost:54282/";
+            var url     = host + "api/Product";
+            var headers = { Accept: "application/json; charset=utf-8" };
+            var data    = "selim";
+
+            /*
+            $.ajax({
+                type       : "POST",
+                url        : url,
+                headers    : headers,
+                data       : JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType   : "json",
+                success    : function (resp) { $("#result").val(resp); console.debug(resp); },
+                error      : function (resp) { $("#result").val(resp); console.debug(resp);}
+            });*/
+
+            $.ajax({
+                type       : "GET",
+                url        : url,
+                headers    : headers,                                                
+                success    : function (resp) { $("#result").val(resp); console.debug(resp); },
+                error      : function (resp) { $("#result").val(resp); console.debug(resp);}
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="result" style="width:500px"><br />
+    <input type="button" onClick="doRequest(1)" value="Request" />
+</body>
+</html>

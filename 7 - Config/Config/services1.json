@@ -1,0 +1,17 @@
+﻿{  
+    "ServerName": "tdwsals",
+    "Services": [
+      {
+        "Name": "UniQue.EXE",
+        "StartupType": "auto"
+      },
+      {
+        "Name": "UniQue.HPES",
+        "StartupType": "manual"
+      },
+      {
+        "Name": "UniQue.WPES",
+        "StartupType": "auto"
+      }
+    ] 
+}
