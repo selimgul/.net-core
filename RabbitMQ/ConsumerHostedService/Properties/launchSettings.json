@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "ConsumerHostedService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

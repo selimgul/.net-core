@@ -1,0 +1,4 @@
+C:\Users\U091361\Desktop\RabbitMQProducer\RabbitMQProducer\obj\Debug\netcoreapp3.1\RabbitMQProducer.csprojAssemblyReference.cache
+C:\Users\U091361\Desktop\RabbitMQProducer\RabbitMQProducer\obj\Debug\netcoreapp3.1\RabbitMQProducer.AssemblyInfoInputs.cache
+C:\Users\U091361\Desktop\RabbitMQProducer\RabbitMQProducer\obj\Debug\netcoreapp3.1\RabbitMQProducer.AssemblyInfo.cs
+C:\Users\U091361\Desktop\RabbitMQProducer\RabbitMQProducer\obj\Debug\netcoreapp3.1\RabbitMQProducer.csproj.CoreCompileInputs.cache
