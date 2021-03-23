@@ -51,7 +51,7 @@ namespace JWT
                options.Events = new JwtBearerEvents
                {
                    OnTokenValidated = ctx => {                       
-                        //Gerekirse burada gelen token içerisindeki çeşitli bilgilere göre doğrulam yapılabilir.
+                        //Gerekirse burada gelen token içerisindeki çeşitli bilgilere göre doğrulama yapılabilir.
                         return Task.CompletedTask;
                    },
                    OnAuthenticationFailed = ctx => {
