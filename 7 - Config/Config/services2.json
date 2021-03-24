@@ -1,17 +1,17 @@
 ﻿{
   "ServiceConfig": {
-    "ServerName": "tdwsals",
+    "ServerName": "server1",
     "Services": [
       {
-        "Name": "UniQue.EXE",
+        "Name": "service1",
         "StartupType": "auto"
       },
       {
-        "Name": "UniQue.HPES",
+        "Name": "service2",
         "StartupType": "manual"
       },
       {
-        "Name": "UniQue.WPES",
+        "Name": "service3",
         "StartupType": "auto"
       }
     ]
