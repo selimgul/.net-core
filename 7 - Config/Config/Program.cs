@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +20,8 @@ namespace Config
 
         private static void ConfigDirect()
         {
+            Console.WriteLine("============= ConfigDirect ==============");
+
             IConfigurationRoot ConfigurationManager = GetConfig("services1.json");
             
             Console.WriteLine($"server: {ConfigurationManager["ServerName"]}");
@@ -33,10 +35,14 @@ namespace Config
         }
         private static void ConfigClass()
         {
+            Console.WriteLine("============= ConfigClass ==============");
+
             IConfigurationRoot ConfigurationManager = GetConfig("services2.json");
 
             var serviceConfig = new ServiceConfig();
             ConfigurationManager.GetSection("ServiceConfig").Bind(serviceConfig);
+
+            Console.WriteLine("=== Bind ===");
 
             Console.WriteLine($"server name: {serviceConfig.ServerName}");
 
@@ -44,9 +50,20 @@ namespace Config
             {
                 Console.WriteLine($"service: {service.Name} - {service.StartupType}");
             }
+
+            Console.WriteLine("=== Get ===");
+
+            var serviceConfig2 = ConfigurationManager.GetSection("ServiceConfig").Get<ServiceConfig>();
+
+            foreach (var service in serviceConfig2.Services)
+            {
+                Console.WriteLine($"service: {service.Name} - {service.StartupType}");
+            }
         }
         private static void ConfigMemory()
         {
+            Console.WriteLine("============= ConfigMemory ==============");
+
             IConfigurationRoot ConfigurationManager = GetConfig();
 
             IEnumerable<Service> services = new List<Service>();
@@ -59,6 +76,8 @@ namespace Config
         }
         private static void ConfigCommandLine()
         {
+            Console.WriteLine("============= ConfigCommandLine ==============");
+
             string[] args = new string[] { "Services:0:StartupType=manual" };
 
             IConfigurationRoot ConfigurationManager = GetConfig(args);
