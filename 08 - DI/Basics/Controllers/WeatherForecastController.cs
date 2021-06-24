@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Basics.Controllers
 {
@@ -19,11 +20,13 @@ namespace Basics.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ILog log)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ILog log, IOptions<AppConfig> appConfig)
         {
             _logger = logger;
             
-            log.info("Constructor");            
+            log.info("Constructor");
+
+            log.info($"constructor MaxCount: {appConfig.Value.MaxCount}");
         }
 
         [HttpGet]
@@ -53,7 +56,7 @@ namespace Basics.Controllers
             return "foo";           
         }
 
-         [HttpGet]
+        [HttpGet]
         [Route("bar")]
         public String bar([FromServices] IEnumerable<ILog> logServices)
         {
@@ -63,6 +66,16 @@ namespace Basics.Controllers
             }
             
             return "bar";           
+        }
+
+
+        [HttpGet]
+        [Route("baz")]
+        public String baz([FromServices] ILog log, [FromServices] IOptions<AppConfig> appConfig)
+        {
+            log.info($"baz MaxCount: {appConfig.Value.MaxCount}");
+            
+            return "baz";
         }
     }
 }

@@ -37,7 +37,10 @@ namespace Basics
 
 
             services.AddSingleton<ILog, ConsoleLogService>();
-            services.AddSingleton<ILog, FileLogService>();            
+            services.AddSingleton<ILog, FileLogService>();   
+
+            //services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
+            services.AddOptions<AppConfig>().Bind(Configuration.GetSection("AppConfig"));         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
