@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Logging
 {
+    // https://docs.microsoft.com/en-us/dotnet/core/extensions/custom-logging-provider
+
     public class Program
     {
         public static void Main(string[] args)
